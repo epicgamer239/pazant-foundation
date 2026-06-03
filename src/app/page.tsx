@@ -39,13 +39,12 @@ const supportWays = [
   },
   {
     title: "Partner",
-    description:
-      "Collaborate with the Foundation to expand opportunity through schools and local organizations.",
+    description: "Collaborate with us to expand opportunity for Beaufort students.",
   },
   {
     title: "Volunteer",
     description:
-      "Mentor students, facilitate workshops, or support events focused on readiness and transition.",
+      "Mentor students, facilitate workshops, or support student-focused events.",
   },
 ];
 
@@ -58,9 +57,9 @@ export default function Home() {
         imageClassName="object-cover object-[50%_42%]"
         eyebrow={<FieldLabel invert>Rosalie Frazier Pazant Foundation</FieldLabel>}
         title="Strengthening educational pathways for Beaufort students"
-        subtitle="Honoring the life of a dedicated Beaufort educator through scholarships and future-ready pathways that help students thrive."
+        subtitle="Honoring the life and service of Rosalie Frazier Pazant, a dedicated Beaufort educator, the Foundation expands opportunity through scholarships and future-ready student pathways that help students thrive in a changing world."
         callout={{
-          lead: "Honoring a legacy. Expanding pathways.",
+          lead: "Honoring a legacy. Expanding pathways. Preparing students to become future-ready.",
           body: "Rooted in disciplined governance and Mrs. Pazant's enduring commitment to educational opportunity in Beaufort County.",
         }}
       >
@@ -68,7 +67,7 @@ export default function Home() {
           Support the mission
         </Button>
         <Button variant="onAccentOutline" href="#programs">
-          View programs
+          Explore our programs
         </Button>
       </HeroPortrait>
 
@@ -101,7 +100,8 @@ export default function Home() {
                 <p>
                   Mrs. Pazant served as a longtime educator in Beaufort County, shaping generations of
                   students through her high expectations, structured approach to learning, and unwavering
-                  dedication to academic growth.
+                  dedication to academic growth. Her belief in the power of education to expand opportunity
+                  continues to guide the Foundation&apos;s mission and programs.
                 </p>
                 <p>
                   Rooted in disciplined governance, the Foundation strengthens educational pathways for
@@ -258,7 +258,7 @@ export default function Home() {
           </div>
           <div className="mt-8">
             <Button variant="primary" href="mailto:info@pazantfoundation.org">
-              Send a message
+              Contact us
             </Button>
           </div>
         </div>

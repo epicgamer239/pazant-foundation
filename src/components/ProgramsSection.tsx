@@ -16,13 +16,13 @@ const currentPrograms: Program[] = [
     title: "Rosalie F. Pazant Scholars Program",
     status: "Active now",
     description:
-      "Scholarships for Beaufort high school seniors preparing for postsecondary education and future-ready pathways.",
+      "The Foundation's initial and primary focus is providing scholarships for Beaufort high school seniors who are preparing for postsecondary education and future-ready pathways.",
     includes: [
-      "College and career advising for applications, financial aid, and postsecondary planning",
+      "College and career advising to support applications, financial aid, and postsecondary planning",
       "Student support resources that strengthen readiness and confidence",
-      "Early exposure opportunities as partnerships develop",
+      "Early exposure opportunities as partnerships develop over time",
     ],
-    note: "The Foundation's first-phase focus: disciplined governance and measurable impact.",
+    note: "This program reflects the Foundation's commitment to disciplined governance and meaningful, achievable impact in its first phase.",
   },
 ];
 
@@ -31,24 +31,25 @@ const upcomingPrograms: Program[] = [
     title: "Future-Ready Student Pathways",
     status: "Planned",
     description:
-      "Pathway initiatives that build practical skills, confidence, and readiness for education and early career opportunities.",
+      "As the Foundation grows, it plans to develop future-ready student pathway initiatives that help students build practical skills, confidence, and readiness for education and early career opportunities.",
     includes: [
       "Career exposure sessions with local employers",
       "Workplace-readiness workshops on communication and professionalism",
       "Mentorship with leaders from Beaufort's business and civic communities",
     ],
-    note: "Introduced gradually as partnerships and capacity grow.",
+    note: "These initiatives will be introduced gradually as partnerships and capacity expand.",
   },
   {
     title: "School, Business & Community Partnerships",
     status: "In development",
-    description: "A network of partners aligned to support student success across Beaufort.",
+    description:
+      "The Foundation intends to build a strong network of partners to support student success across Beaufort.",
     includes: [
       "School partnerships aligned with district needs",
       "Local business collaborations for exposure and applied learning",
       "Community organization engagement for student wellbeing and transitions",
     ],
-    note: "Long-term vision: coordinated, community-wide commitment to Beaufort students.",
+    note: "These partnerships represent the Foundation's long-term vision for a coordinated, community-wide commitment to Beaufort students.",
   },
 ];
 

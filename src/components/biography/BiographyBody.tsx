@@ -10,16 +10,16 @@ import { BioJumpNav } from "@/components/biography/BioJumpNav";
 import { BEAUFORT_HIGH_HERO_ALT, BEAUFORT_HIGH_HERO_SRC, PORTRAIT_ALT, PORTRAIT_SRC } from "@/components/HeroPortrait";
 import {
   academicPrep,
-  bioHighlights,
   directoryListings,
-  honors,
   k12Roles,
   k12Schools,
   higherEdRoles,
   leadershipThemes,
   nationalRecognition,
-  timelineSpine,
 } from "@/content/biography";
+import { BioHighlightBand } from "@/components/biography/BioHighlightBand";
+import { BioHonorsSection } from "@/components/biography/BioHonorsSection";
+import { BioTimeline } from "@/components/biography/BioTimeline";
 
 const SECTION_SCROLL = "scroll-mt-[7.5rem] md:scroll-mt-[8.5rem]";
 
@@ -45,27 +45,15 @@ function BulletList({ items, stagger = false }: { items: string[]; stagger?: boo
 export function BiographyBody() {
   return (
     <div className="bg-surface">
-      <section className="border-b border-line bg-surface-raised">
-        <div className="sticky top-[4.25rem] z-30 border-b border-line bg-surface-raised/95 backdrop-blur-sm md:top-[4.5rem]">
-          <div className="mx-auto max-w-6xl">
-            <BioJumpNav />
-          </div>
+      <div className="sticky top-[4.25rem] z-30 border-b border-line bg-surface/95 backdrop-blur-sm md:top-[4.5rem]">
+        <div className="mx-auto max-w-6xl px-6">
+          <BioJumpNav />
         </div>
+      </div>
 
+      <section className="border-b border-line bg-surface-raised">
         <Reveal className="mx-auto max-w-6xl px-6 py-10 md:py-12">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-            {bioHighlights.map((item, index) => (
-              <div
-                key={item.label}
-                className="bio-stat panel-accent-top panel-hover stagger-enter"
-                style={{ "--i": index } as CSSProperties}
-              >
-                <p className="bio-stat-value font-serif">{item.value}</p>
-                <p className="mt-2 text-sm font-semibold text-ink">{item.label}</p>
-                <p className="mt-1 text-xs leading-relaxed text-ink-muted">{item.detail}</p>
-              </div>
-            ))}
-          </div>
+          <BioHighlightBand />
         </Reveal>
       </section>
 
@@ -93,7 +81,8 @@ export function BiographyBody() {
                   Rosalie Frazier Pazant was a distinguished Beaufort educator whose life&apos;s work shaped
                   generations of students across South Carolina and Georgia. A native Beaufortonian, she built
                   a career defined by academic excellence, disciplined leadership, and an unwavering belief in
-                  the potential of young people.
+                  the potential of young people. Her influence extended across K–12 and higher education,
+                  statewide curriculum leadership, national assessment work, and community advocacy.
                 </p>
                 <p>
                   Her legacy continues through the{" "}
@@ -126,6 +115,10 @@ export function BiographyBody() {
                 </li>
               ))}
             </ol>
+            <p className="mt-6 text-ink-muted leading-relaxed">
+              Her advanced study reflected her belief that educators must continually grow to better serve
+              their students.
+            </p>
           </section>
         </Reveal>
 
@@ -150,7 +143,8 @@ export function BiographyBody() {
             <section className="panel panel-hover">
               <h3 className="font-serif text-lg text-ink">Excellence in K–12 education</h3>
               <p className="mt-4 text-ink-muted leading-relaxed">
-                Mrs. Pazant served as High School English Department Chair at three Beaufort County schools:
+                Mrs. Pazant served as High School English Department Chair at three major Beaufort County
+                schools:
               </p>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {k12Schools.map((school) => (
@@ -161,43 +155,38 @@ export function BiographyBody() {
               </ul>
               <p className="mt-6 text-ink-muted">In these roles, she:</p>
               <BulletList items={k12Roles} stagger />
+              <p className="mt-6 text-ink-muted leading-relaxed">
+                Her leadership shaped the academic culture of each school she served.
+              </p>
             </section>
 
             <section className="panel-accent-top panel-hover lg:self-start">
               <FieldLabel>Savannah State University</FieldLabel>
               <h3 className="font-serif mt-3 text-lg text-ink">Higher education leadership</h3>
               <p className="mt-4 text-ink-muted leading-relaxed">
-                Mrs. Pazant expanded her impact at Savannah State University:
+                Mrs. Pazant expanded her impact in higher education through key roles at Savannah State
+                University:
               </p>
               <BulletList items={higherEdRoles} stagger />
+              <p className="mt-6 text-ink-muted leading-relaxed">
+                She strengthened academic programs, supported student readiness, and contributed to the
+                university&apos;s instructional excellence.
+              </p>
             </section>
           </div>
         </Reveal>
 
         <Reveal id="bio-honors" className={SECTION_SCROLL} delay={60}>
-          <section className="panel-soft">
-            <FieldLabel>Honors & achievements</FieldLabel>
-            <h2 className="prose-section-title mt-3">Awards & historic milestones</h2>
-            <ul className="bio-honor-grid mt-8">
-              {honors.map((honor, index) => (
-                <li
-                  key={honor.text}
-                  className={`bio-honor-tile stagger-enter panel-hover ${
-                    honor.featured ? "bio-honor-tile-featured panel-accent-top" : "panel"
-                  }`}
-                  style={{ "--i": index } as CSSProperties}
-                >
-                  {honor.text}
-                </li>
-              ))}
-            </ul>
-          </section>
+          <BioHonorsSection />
         </Reveal>
 
         <Reveal id="bio-influence" className={SECTION_SCROLL} delay={40}>
           <SectionHeading title="Influence & recognition" />
           <div className="grid gap-6 lg:grid-cols-2">
             <div className="space-y-4">
+              <p className="text-pretty text-ink-muted leading-relaxed">
+                Mrs. Pazant contributed to educational excellence beyond her own classrooms:
+              </p>
               {leadershipThemes.map((theme, index) => (
                 <section
                   key={theme.title}
@@ -217,12 +206,19 @@ export function BiographyBody() {
                   </ul>
                 </section>
               ))}
+              <p className="text-sm leading-relaxed text-ink-muted">
+                Her expertise shaped curriculum, assessment, and instructional standards across the state
+                and nation.
+              </p>
             </div>
 
             <div className="flex flex-col gap-6">
               <section className="panel-accent-top panel-hover">
                 <FieldLabel>National</FieldLabel>
                 <h3 className="prose-section-title mt-3">Broader leadership</h3>
+                <p className="mt-4 text-ink-muted leading-relaxed">
+                  Mrs. Pazant&apos;s leadership extended into national education and advocacy:
+                </p>
                 <BulletList items={nationalRecognition} />
               </section>
 
@@ -234,7 +230,10 @@ export function BiographyBody() {
               </blockquote>
 
               <section className="panel panel-hover">
-                <p className="text-xs font-semibold text-accent">Directory listings</p>
+                <h3 className="prose-section-title">Honors & listings</h3>
+                <p className="mt-4 text-sm text-ink-muted leading-relaxed">
+                  Mrs. Pazant was recognized in several national directories, including:
+                </p>
                 <ul className="bio-directory-chips mt-4">
                   {directoryListings.map((item) => (
                     <li key={item}>
@@ -248,27 +247,7 @@ export function BiographyBody() {
         </Reveal>
 
         <Reveal id="bio-timeline" className={SECTION_SCROLL} delay={50}>
-          <section className="panel panel-hover">
-            <SectionHeading
-              title="Chronological spine"
-              subtitle="Key turning points only. See sections above for full detail on education, career, honors, and influence."
-            />
-            <ol className="bio-timeline-spine mt-6">
-              {timelineSpine.map((milestone, index) => (
-                <li
-                  key={`${milestone.when}-${milestone.title}`}
-                  className="bio-timeline-spine-item stagger-enter"
-                  style={{ "--i": index } as CSSProperties}
-                >
-                  <span className="bio-timeline-when">{milestone.when}</span>
-                  <div>
-                    <h3 className="font-serif text-base text-ink">{milestone.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-muted">{milestone.note}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
+          <BioTimeline />
         </Reveal>
 
         <Reveal id="bio-legacy" className={`${SECTION_SCROLL} band-accent section-y !py-12 md:!py-16`} delay={60}>
@@ -277,8 +256,9 @@ export function BiographyBody() {
             <blockquote className="quote-deco text-pretty mt-4 font-serif text-[clamp(1.25rem,2.5vw,1.65rem)] leading-relaxed text-hero-ink">
               <p>
                 Rosalie Frazier Pazant&apos;s life was defined by service to students, community, and future
-                generations. The Foundation carries forward her belief in disciplined learning, educational
-                opportunity, and preparing students to become future-ready.
+                generations. Her legacy continues through the Rosalie Frazier Pazant Foundation, which
+                carries forward her belief in disciplined learning, educational opportunity, and the
+                transformative power of preparing students to become future-ready.
               </p>
             </blockquote>
             <div className="mt-10 flex flex-wrap justify-center gap-4">

@@ -42,7 +42,7 @@ export function BioJumpNav() {
   }, []);
 
   return (
-    <nav aria-label="On this page" className="bio-jump-nav px-6 py-3 md:px-0">
+    <nav aria-label="On this page" className="bio-jump-nav py-3">
       <div className="md:hidden">
         <label className="block">
           <span className="mb-2 block text-xs font-semibold text-ink-muted">Jump to section</span>

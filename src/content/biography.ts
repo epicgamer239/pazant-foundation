@@ -22,19 +22,22 @@ export const higherEdRoles = [
   "Acting Director, Division of Developmental Studies",
 ];
 
-export const honors = [
+export const honorMilestones = [
   {
+    label: "Historic first",
     text: "First Black teacher in South Carolina to receive the American Legion's State Teacher of the Year Award",
-    featured: true,
   },
   {
-    text: "National Honor Society chapter named in her honor: the Rosalie F. Pazant Chapter at Battery Creek High School",
-    featured: true,
+    label: "Named in her honor",
+    text: "National Honor Society chapter named in her honor — the Rosalie F. Pazant Chapter of the National Honor Society at Battery Creek High School",
   },
-  { text: "Teacher of the Year (1970)" },
-  { text: "STAR Teacher (1972)" },
-  { text: "Beaufort County District Teacher of the Year" },
-  { text: "Teacher of the Year at Beaufort High School (again)" },
+];
+
+export const honorAwards = [
+  { title: "Teacher of the Year", year: "1970" },
+  { title: "STAR Teacher", year: "1972" },
+  { title: "Beaufort County District Teacher of the Year" },
+  { title: "Teacher of the Year at Beaufort High School", note: "Again" },
 ];
 
 export const leadershipThemes = [
@@ -73,52 +76,51 @@ export const directoryListings = [
   "Who's Who Among College Women",
 ];
 
-/** Chronological spine only — details live in sections above. */
-export const timelineSpine = [
+export const timelineEras = [
   {
-    when: "Beaufort",
-    title: "Roots in Beaufort County",
-    note: "Born and raised in the community she would serve for decades.",
+    era: "Early Life & Education",
+    items: [
+      "Born and raised in Beaufort, South Carolina",
+      "Earned B.A. in English Education, Georgia State College",
+      "Earned M.Ed., South Carolina State College",
+      "Graduate study at North Carolina A&T",
+      "Completed doctoral coursework at NOVA University",
+    ],
   },
   {
-    when: "Graduate study",
-    title: "Advanced credentials completed",
-    note: "M.Ed., doctoral coursework at NOVA, and graduate work at NC A&T.",
+    era: "K–12 Leadership",
+    items: [
+      "English Department Chair, Robert Smalls High",
+      "English Department Chair, Beaufort High",
+      "English Department Chair, Battery Creek High",
+    ],
   },
   {
-    when: "K–12 era",
-    title: "English chair at three county high schools",
-    note: "Robert Smalls, Beaufort High, and Battery Creek.",
+    era: "Awards & Recognition",
+    emphasis: true,
+    items: [
+      "1970 — Teacher of the Year",
+      "1972 — STAR Teacher",
+      "Beaufort County District Teacher of the Year",
+      "First Black teacher in SC to receive the American Legion State Teacher of the Year Award",
+      "National Honor Society chapter named in her honor",
+    ],
   },
   {
-    when: "1970",
-    title: "Teacher of the Year",
-    note: "Beginning of sustained local and state recognition.",
+    era: "Higher Education Leadership",
+    items: [
+      "Associate Professor of English, Savannah State University",
+      "Acting Director, Division of Developmental Studies, Savannah State University",
+    ],
   },
   {
-    when: "1972",
-    title: "STAR Teacher",
-    note: "Continued classroom excellence in Beaufort County.",
-  },
-  {
-    when: "State honor",
-    title: "American Legion State Teacher of the Year",
-    note: "First Black teacher in South Carolina to receive the award.",
-  },
-  {
-    when: "Savannah State",
-    title: "Higher education leadership",
-    note: "Associate Professor of English; Acting Director, Division of Developmental Studies.",
-  },
-  {
-    when: "National",
-    title: "White House minority leadership conference",
-    note: "One of sixty leaders selected nationwide for the first federally sponsored conference.",
-  },
-  {
-    when: "Legacy",
-    title: "NHS chapter dedication",
-    note: "The Rosalie F. Pazant Chapter at Battery Creek High School.",
+    era: "State & National Influence",
+    items: [
+      "State Textbook Evaluation Committee",
+      "ACT Grammar contributor",
+      "College Board Reader (ETS, Princeton)",
+      "White House Minority Leadership Conference participant",
+    ],
   },
 ];
 
@@ -127,21 +129,25 @@ export const bioHighlights = [
     value: "3",
     label: "Schools chaired",
     detail: "English departments across Beaufort County",
+    motion: "count" as const,
   },
   {
     value: "1970",
     label: "Teacher of the Year",
     detail: "First of many state and local honors",
+    motion: "reveal" as const,
   },
   {
     value: "60",
     label: "National leaders",
     detail: "Selected for the first federally sponsored minority conference at the White House",
+    motion: "count" as const,
   },
   {
     value: "1",
     label: "NHS chapter",
     detail: "The Rosalie F. Pazant Chapter at Battery Creek High",
+    motion: "count" as const,
   },
 ];
 
