@@ -4,7 +4,7 @@ import type { CSSProperties } from "react";
 import { Button } from "@/components/Button";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FieldLabel } from "@/components/FieldLabel";
-import { SocialLinks } from "@/components/SocialLinks";
+import { BeaufortLocationLink, SocialLinks } from "@/components/SocialLinks";
 import {
   BEAUFORT_HIGH_HERO_ALT,
   BEAUFORT_HIGH_HERO_SRC,
@@ -15,6 +15,13 @@ import {
 import { CoreValues } from "@/components/CoreValues";
 import { ProgramsSection } from "@/components/ProgramsSection";
 import { Reveal } from "@/components/Reveal";
+
+const focusAreas = [
+  "Scholarships",
+  "Future-ready pathways",
+  "Educational access",
+  "Community investment",
+];
 
 const impactItems = [
   {
@@ -56,27 +63,26 @@ export default function Home() {
         imageAlt={BEAUFORT_HIGH_HERO_ALT}
         imageClassName="object-cover object-[50%_42%]"
         eyebrow={<FieldLabel invert>Rosalie Frazier Pazant Foundation</FieldLabel>}
-        title="Strengthening educational pathways for Beaufort students"
-        subtitle="Honoring the life and service of Rosalie Frazier Pazant, a dedicated Beaufort educator, the Foundation expands opportunity through scholarships and future-ready student pathways that help students thrive in a changing world."
+        title="Educational Pathways for Beaufort Students"
+        subtitle="Honoring educator Rosalie Frazier Pazant through scholarships and future-ready pathways that help Beaufort students thrive."
         callout={{
-          lead: "Honoring a legacy. Expanding pathways. Preparing students to become future-ready.",
-          body: "Rooted in disciplined governance and Mrs. Pazant's enduring commitment to educational opportunity in Beaufort County.",
+          lead: "Honoring a legacy. Expanding pathways. Preparing students for the future.",
+          body: "Rooted in disciplined governance and Mrs. Pazant's commitment to educational opportunity in Beaufort County.",
         }}
       >
         <Button variant="onAccent" href="#support">
-          Support the mission
+          Support the Mission
         </Button>
         <Button variant="onAccentOutline" href="#programs">
-          Explore our programs
+          Our Programs
         </Button>
       </HeroPortrait>
 
-      {/* Preserved: user-approved About section */}
       <Reveal as="section" id="about" className="section-y scroll-mt-24 border-t border-line">
         <div className="mx-auto max-w-6xl px-6">
-          <SectionHeading title="A Legacy of Education and Service" size="large" />
+          <SectionHeading title="Education & Service" size="large" />
           <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
-            <figure className="image-enter photo-frame photo-frame-accent panel w-full self-start overflow-hidden p-0">
+            <figure className="image-enter photo-frame panel w-full self-start overflow-hidden p-0">
               <Image
                 src={PORTRAIT_SRC}
                 alt={PORTRAIT_ALT}
@@ -91,9 +97,9 @@ export default function Home() {
               </figcaption>
             </figure>
             <div className="flex flex-col gap-8">
-              <div className="panel-accent-top panel-hover text-pretty min-w-0 space-y-5 text-ink-muted leading-relaxed">
+              <div className="panel panel-hover text-pretty min-w-0 space-y-5 text-base leading-relaxed text-ink-muted">
                 <p>
-                  The <strong className="font-medium text-ink">Rosalie Frazier Pazant Foundation</strong>{" "}
+                  The <strong className="font-semibold text-ink">Rosalie Frazier Pazant Foundation</strong>{" "}
                   honors the life and service of Rosalie Frazier Pazant, a respected Beaufort educator whose
                   career reflected discipline, compassion, and a deep belief in the potential of every child.
                 </p>
@@ -112,25 +118,27 @@ export default function Home() {
               <aside className="panel panel-hover">
                 <div className="grid gap-6 sm:grid-cols-3 lg:grid-cols-1">
                   <div>
-                    <FieldLabel>Founder & board chair</FieldLabel>
-                    <p className="font-serif mt-2 text-xl text-ink">Alecia Pazant Hall</p>
+                    <FieldLabel>Founder & Board Chair</FieldLabel>
+                    <p className="mt-2 text-lg font-semibold text-ink">Alecia Pazant Hall</p>
                   </div>
                   <div>
                     <FieldLabel>Location</FieldLabel>
-                    <p className="mt-2 text-ink">Beaufort, South Carolina</p>
+                    <BeaufortLocationLink className="mt-2 inline-block text-lg font-medium" />
                   </div>
                   <div>
-                    <FieldLabel>Focus areas</FieldLabel>
-                    <p className="mt-2 text-sm text-ink-muted">
-                      Scholarships, future-ready pathways, educational access, and community investment.
-                    </p>
+                    <FieldLabel>Focus Areas</FieldLabel>
+                    <ul className="mt-2 list-disc space-y-1 pl-5 text-base text-ink-muted">
+                      {focusAreas.map((area) => (
+                        <li key={area}>{area}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
                 <Link
                   href="/biography"
-                  className="link-motion link-underline-grow mt-8 inline-block text-sm font-semibold text-accent hover:text-accent-hover"
+                  className="link-motion link-underline-grow text-link hover:text-link-hover mt-8 inline-block text-sm font-semibold"
                 >
-                  Read Mrs. Pazant&apos;s biography
+                  Read Mrs. Pazant&apos;s Biography
                 </Link>
               </aside>
             </div>
@@ -138,31 +146,26 @@ export default function Home() {
         </div>
       </Reveal>
 
-      {/* Preserved: user-approved Mission & Vision */}
       <Reveal as="section" id="mission" className="section-y scroll-mt-24 bg-surface-raised" delay={60}>
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading title="Mission & Vision" size="large" />
-          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
-            <div className="panel-accent-top panel-hover text-pretty">
-              <h3 className="prose-section-title">Mission</h3>
-              <p className="mt-5 leading-relaxed text-ink-muted">
-                Honoring the life and service of Rosalie Frazier Pazant, a dedicated Beaufort educator,
-                the Rosalie Frazier Pazant Foundation strengthens educational pathways for Beaufort
-                students through scholarships and future-ready student pathways that prepare them for
-                postsecondary success. Rooted in disciplined governance and Mrs. Pazant&apos;s enduring
-                legacy, the Foundation supports students as they build the skills, confidence, and
-                readiness needed to thrive in a changing world.
-              </p>
-            </div>
-            <div className="panel-accent-top panel-hover text-pretty">
-              <h3 className="prose-section-title">Vision</h3>
-              <p className="mt-5 leading-relaxed text-ink-muted">
-                A Beaufort where every student is equipped with the education, skills, and confidence to
-                pursue meaningful opportunities and thrive along future-ready pathways, supported by a
-                Foundation that honors Rosalie Frazier Pazant&apos;s legacy through disciplined stewardship
-                and community investment.
-              </p>
-            </div>
+          <div className="panel panel-hover text-pretty max-w-4xl">
+            <h3 className="prose-section-title">Mission</h3>
+            <p className="mt-4 text-base leading-relaxed text-ink-muted">
+              Honoring the life and service of Rosalie Frazier Pazant, a dedicated Beaufort educator,
+              the Rosalie Frazier Pazant Foundation strengthens educational pathways for Beaufort
+              students through scholarships and future-ready student pathways that prepare them for
+              postsecondary success. Rooted in disciplined governance and Mrs. Pazant&apos;s enduring
+              legacy, the Foundation supports students as they build the skills, confidence, and
+              readiness needed to thrive in a changing world.
+            </p>
+            <h3 className="prose-section-title mt-8">Vision</h3>
+            <p className="mt-4 text-base leading-relaxed text-ink-muted">
+              A Beaufort where every student is equipped with the education, skills, and confidence to
+              pursue meaningful opportunities and thrive along future-ready pathways, supported by a
+              Foundation that honors Rosalie Frazier Pazant&apos;s legacy through disciplined stewardship
+              and community investment.
+            </p>
           </div>
 
           <CoreValues />
@@ -178,47 +181,45 @@ export default function Home() {
             {impactItems.map((item, index) => (
               <div
                 key={item.label}
-                className="panel-accent-top panel-hover"
+                className="panel panel-hover"
                 style={{ "--reveal-delay": `${index * 90}ms` } as CSSProperties}
               >
-                <p className="impact-label font-serif text-2xl text-accent">{item.label}</p>
-                <p className="mt-3 text-sm leading-relaxed text-ink-muted">{item.detail}</p>
+                <p className="impact-label text-lg font-semibold text-ink">{item.label}</p>
+                <p className="mt-3 text-base leading-relaxed text-ink-muted">{item.detail}</p>
               </div>
             ))}
           </div>
         </div>
       </Reveal>
 
-      <Reveal as="section" id="support" className="band-accent section-y scroll-mt-24" delay={50}>
+      <Reveal as="section" id="support" className="section-y scroll-mt-24 border-t border-line bg-surface" delay={50}>
         <div className="mx-auto max-w-6xl px-6">
           <SectionHeading
-            title="Ways to support"
+            title="Ways to Support"
             subtitle="Every contribution strengthens opportunity for Beaufort students."
-            invert
             size="large"
           />
           <div className="grid gap-6 md:grid-cols-3">
             {supportWays.map((way) => (
-              <div key={way.title} className="panel-on-accent">
-                <h3 className="font-serif text-xl text-hero-ink">{way.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-hero-muted">{way.description}</p>
+              <div key={way.title} className="panel panel-hover">
+                <h3 className="text-lg font-semibold text-ink">{way.title}</h3>
+                <p className="mt-3 text-base leading-relaxed text-ink-muted">{way.description}</p>
               </div>
             ))}
           </div>
           <div className="mt-10">
-            <Button variant="onAccent" href="mailto:info@pazantfoundation.org?subject=Get%20involved">
-              Get involved
+            <Button variant="primary" href="mailto:info@pazantfoundation.org?subject=Get%20Involved">
+              Get Involved
             </Button>
           </div>
         </div>
       </Reveal>
 
-      {/* Preserved: user-approved founder message */}
       <Reveal as="section" className="section-y border-t border-line" delay={70}>
         <div className="mx-auto max-w-4xl px-6">
-          <SectionHeading title="A Note from Alecia Pazant Hall" align="center" size="large" />
-          <figure className="panel-soft quote-deco text-center">
-            <blockquote className="text-pretty font-serif text-[clamp(1.35rem,2.8vw,1.75rem)] leading-relaxed text-ink">
+          <SectionHeading title="From the Founder" align="center" size="large" />
+          <figure className="panel quote-deco text-center">
+            <blockquote className="text-pretty text-lg leading-relaxed text-ink md:text-xl">
               <p>
                 My grandmother believed deeply in the power of education, discipline, and community. This
                 Foundation ensures her legacy continues, not as memory, but as opportunity. We are committed
@@ -226,7 +227,7 @@ export default function Home() {
                 disciplined stewardship and meaningful impact.
               </p>
             </blockquote>
-            <figcaption className="mt-8 border-t border-line pt-6 text-sm font-semibold text-accent">
+            <figcaption className="mt-8 border-t border-line pt-6 text-sm font-semibold text-ink-muted">
               Alecia Pazant Hall, Founder & Board Chair
             </figcaption>
           </figure>
@@ -241,24 +242,24 @@ export default function Home() {
               <FieldLabel>Email</FieldLabel>
               <a
                 href="mailto:info@pazantfoundation.org"
-                className="link-motion mt-2 block text-xl font-medium text-ink hover:text-accent"
+                className="link-motion text-link hover:text-link-hover mt-2 block text-lg font-medium"
               >
                 info@pazantfoundation.org
               </a>
             </div>
             <div>
               <FieldLabel>Location</FieldLabel>
-              <p className="mt-2 text-xl text-ink">Beaufort, South Carolina</p>
+              <BeaufortLocationLink className="mt-2 inline-block text-lg font-medium" />
             </div>
             <div>
               <FieldLabel>Social</FieldLabel>
-              <p className="mt-2 text-sm text-ink-muted">Profiles coming soon.</p>
+              <p className="mt-2 text-sm text-ink-muted">Follow the Foundation (profiles coming soon).</p>
               <SocialLinks className="mt-3" />
             </div>
           </div>
           <div className="mt-8">
             <Button variant="primary" href="mailto:info@pazantfoundation.org">
-              Contact us
+              Contact Us
             </Button>
           </div>
         </div>

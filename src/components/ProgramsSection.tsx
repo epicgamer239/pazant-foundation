@@ -59,16 +59,16 @@ function ProgramCard({ program }: { program: Program }) {
   return (
     <article className="panel panel-hover">
       <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-line pb-4">
-        <h3 className="font-serif text-xl text-ink md:text-2xl">{program.title}</h3>
+        <h3 className="text-lg font-semibold text-ink">{program.title}</h3>
         <StatusBadge>{program.status}</StatusBadge>
       </div>
-      <p className="text-pretty mt-5 max-w-3xl text-lg leading-relaxed text-ink-muted">
+      <p className="text-pretty mt-5 max-w-3xl text-base leading-relaxed text-ink-muted">
         {program.description}
       </p>
       <ul className="mt-5 grid gap-2 text-sm text-ink-muted sm:grid-cols-2">
         {program.includes.map((item) => (
           <li key={item} className="flex gap-2">
-            <span className="font-semibold text-accent" aria-hidden>
+            <span className="font-semibold text-ink" aria-hidden>
               ·
             </span>
             <span>{item}</span>
@@ -98,10 +98,10 @@ export function ProgramsSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-10 flex flex-col gap-6 md:mb-12 md:flex-row md:items-start md:justify-between">
           <header className="max-w-2xl">
-            <h2 className="font-serif text-balance text-[clamp(2rem,4vw,3rem)] font-normal leading-[1.12] tracking-[-0.02em] text-ink">
-              Our programs
+            <h2 className="section-title text-balance text-[clamp(1.75rem,3.5vw,2.25rem)]">
+              Our Programs
             </h2>
-            <p className="text-pretty mt-4 text-lg leading-relaxed text-ink-muted">
+            <p className="text-pretty mt-4 text-base leading-relaxed text-ink-muted">
               {tab === "current"
                 ? "What the Foundation offers today for Beaufort students."
                 : "Programs we are building as partnerships and capacity expand."}

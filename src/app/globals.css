@@ -5,17 +5,20 @@
   --ink-muted: oklch(0.4 0.03 250);
   --surface: oklch(0.995 0.003 250);
   --surface-raised: oklch(0.965 0.008 250);
+  --surface-values: oklch(0.96 0.018 245);
   --surface-panel: oklch(1 0.002 250);
   --line: oklch(0.86 0.014 250);
-  --accent: oklch(0.42 0.12 28);
-  --accent-hover: oklch(0.34 0.12 28);
-  --accent-soft: oklch(0.96 0.03 28);
-  --accent-band: oklch(0.36 0.11 28);
+  --accent: oklch(0.32 0.09 25);
+  --accent-hover: oklch(0.26 0.09 25);
+  --accent-soft: oklch(0.96 0.012 25);
+  --accent-band: oklch(0.28 0.08 25);
+  --link: oklch(0.4 0.07 245);
+  --link-hover: oklch(0.32 0.09 245);
   --hero: oklch(0.17 0.045 250);
   --hero-mid: oklch(0.22 0.04 250);
   --hero-ink: oklch(0.98 0.008 250);
   --hero-muted: oklch(0.88 0.02 250);
-  --focus-ring: oklch(0.48 0.12 28);
+  --focus-ring: oklch(0.38 0.09 25);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
   --duration-fast: 150ms;
@@ -29,12 +32,15 @@
   --color-ink-muted: var(--ink-muted);
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
+  --color-surface-values: var(--surface-values);
   --color-surface-panel: var(--surface-panel);
   --color-line: var(--line);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-soft: var(--accent-soft);
   --color-accent-band: var(--accent-band);
+  --color-link: var(--link);
+  --color-link-hover: var(--link-hover);
   --color-hero: var(--hero);
   --color-hero-mid: var(--hero-mid);
   --color-hero-ink: var(--hero-ink);
@@ -91,16 +97,9 @@ body {
   padding: clamp(1.25rem, 3vw, 2rem);
 }
 
-.panel-accent-top {
-  background: var(--surface-panel);
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--accent);
-  padding: clamp(1.25rem, 3vw, 2rem);
-}
-
 .panel-soft {
-  background: var(--accent-soft);
-  border: 1px solid oklch(0.9 0.04 28);
+  background: var(--surface-raised);
+  border: 1px solid var(--line);
   padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
@@ -116,10 +115,28 @@ body {
 }
 
 .prose-section-title {
-  font-family: var(--font-libre-baskerville), Georgia, serif;
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
   color: var(--ink);
+}
+
+.section-title {
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.text-link {
+  color: var(--link);
+}
+
+.text-link:hover {
+  color: var(--link-hover);
 }
 
 .band-hero {
@@ -165,11 +182,8 @@ body {
 }
 
 .hero-callout {
-  border: 1px solid oklch(1 0 0 / 0.15);
-  background: oklch(0.12 0.04 250 / 0.82);
-  padding: clamp(1.25rem, 3vw, 1.75rem);
-  box-shadow: 0 12px 40px oklch(0.1 0.04 250 / 0.35);
-  backdrop-filter: blur(6px);
+  max-width: 36rem;
+  padding-top: 0.25rem;
 }
 
 .skip-link {
@@ -273,9 +287,11 @@ body {
   box-shadow: 0 16px 48px oklch(0.2 0.04 250 / 0.12);
 }
 
-.photo-frame-accent {
-  outline: 3px solid var(--accent);
-  outline-offset: -3px;
+.values-surface {
+  margin-top: 3rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: var(--surface-values);
+  border: 1px solid var(--line);
 }
 
 .values-block {
@@ -357,51 +373,65 @@ body {
   padding: clamp(1rem, 2.5vw, 1.35rem);
 }
 
-.value-tile-featured {
-  border-top: 3px solid var(--accent);
-  background: var(--surface);
-}
-
 .value-tile-index {
-  font-family: var(--font-libre-baskerville), Georgia, serif;
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--accent);
-  opacity: 0.55;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
 }
 
 .value-tile-title {
-  font-family: var(--font-libre-baskerville), Georgia, serif;
-  font-size: clamp(1.05rem, 2vw, 1.2rem);
-  line-height: 1.25;
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.3;
   color: var(--ink);
-}
-
-.value-tile-featured .value-tile-title {
-  font-size: clamp(1.15rem, 2.2vw, 1.35rem);
 }
 
 .value-tile-desc {
   margin-top: 0.5rem;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   line-height: 1.55;
   color: var(--ink-muted);
-}
-
-.value-tile-featured .value-tile-desc {
-  font-size: 0.9375rem;
 }
 
 .quote-deco::before {
   content: "\201C";
   display: block;
-  font-family: var(--font-libre-baskerville), Georgia, serif;
-  font-size: clamp(3rem, 8vw, 4.5rem);
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 600;
   line-height: 0.85;
-  color: var(--accent);
-  opacity: 0.28;
+  color: var(--ink-muted);
+  opacity: 0.35;
   margin-bottom: 0.25rem;
+}
+
+.band-accent .quote-deco::before,
+.quote-deco-light::before {
+  color: var(--hero-ink);
+  opacity: 0.85;
+}
+
+.quote-deco-light::after {
+  content: "\201D";
+  display: block;
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 600;
+  line-height: 0.85;
+  color: var(--hero-ink);
+  opacity: 0.85;
+  margin-top: 0.5rem;
+}
+
+.band-accent .quote-deco blockquote,
+.band-accent .quote-deco p,
+.quote-deco-light blockquote,
+.quote-deco-light p {
+  color: var(--hero-ink);
 }
 
 @keyframes reveal-rise {
@@ -463,7 +493,7 @@ body {
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .link-underline-grow:hover,
   .link-underline-grow:focus-visible {
-    text-decoration-color: var(--accent);
+    text-decoration-color: var(--link);
   }
 
   .image-enter:hover img {
@@ -478,7 +508,7 @@ body {
   }
 
   .panel-hover:hover {
-    border-color: oklch(0.75 0.04 28);
+    border-color: oklch(0.78 0.02 250);
     box-shadow: 0 10px 32px oklch(0.2 0.04 250 / 0.08);
     transform: translateY(-3px);
   }
@@ -541,7 +571,7 @@ body {
 
 .bio-pull-quote {
   padding: clamp(1.25rem, 3vw, 1.75rem);
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--line);
 }
 
 .bio-directory-chips {
@@ -579,19 +609,20 @@ body {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--ink-muted);
 }
 
 .bio-honor-milestone-quote {
   margin: 0.75rem 0 0;
   padding: 0 0 0 1rem;
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--line);
 }
 
 .bio-honor-milestone-quote p {
   margin: 0;
-  font-family: var(--font-libre-baskerville), Georgia, serif;
+  font-family: var(--font-source-sans), system-ui, sans-serif;
   font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 600;
   line-height: 1.45;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -644,11 +675,12 @@ body {
 }
 
 .bio-honors-register-year {
-  font-family: var(--font-libre-baskerville), Georgia, serif;
+  font-family: var(--font-source-sans), system-ui, sans-serif;
   font-size: 1.125rem;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
-  color: var(--accent);
+  color: var(--ink-muted);
   text-align: right;
   white-space: nowrap;
 }
@@ -661,7 +693,7 @@ body {
   font-size: clamp(2rem, 4vw, 2.75rem);
   line-height: 1;
   letter-spacing: -0.03em;
-  color: var(--accent);
+  color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
 
@@ -704,11 +736,11 @@ body {
 }
 
 .bio-credential-index {
-  font-family: var(--font-libre-baskerville), Georgia, serif;
-  font-size: 1.5rem;
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
   line-height: 1;
-  color: var(--accent);
-  opacity: 0.6;
+  color: var(--ink-muted);
   min-width: 2rem;
 }
 
@@ -755,8 +787,8 @@ body {
     top: 1.25rem;
     bottom: 1.25rem;
     width: 2px;
-    background: var(--accent);
-    opacity: 0.35;
+    background: var(--line);
+    opacity: 1;
   }
 }
 
@@ -792,23 +824,22 @@ body {
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--ink-muted);
     box-shadow: 0 0 0 4px var(--surface-raised);
   }
 }
 
 .bio-timeline-era-card--emphasis {
-  border-top-width: 3px;
-  border-top-color: var(--accent);
+  background: var(--surface-raised);
 }
 
 .bio-timeline-era-index {
-  font-family: var(--font-libre-baskerville), Georgia, serif;
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-family: var(--font-source-sans), system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.03em;
-  color: var(--accent);
-  opacity: 0.55;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
 }
 
 .bio-timeline-era-card--emphasis .bio-timeline-era-index {

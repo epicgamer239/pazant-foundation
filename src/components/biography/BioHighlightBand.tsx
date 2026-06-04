@@ -8,7 +8,7 @@ export function BioHighlightBand() {
       {bioHighlights.map((item, index) => (
         <div
           key={item.label}
-          className="bio-stat panel-accent-top panel-hover stagger-enter"
+          className="bio-stat panel panel-hover stagger-enter"
           style={{ "--i": index } as CSSProperties}
         >
           <AnimatedStatValue value={item.value} motion={item.motion} />

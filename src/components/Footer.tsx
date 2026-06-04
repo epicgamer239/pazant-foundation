@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SocialLinks } from "@/components/SocialLinks";
+import { BeaufortLocationLink, SocialLinks } from "@/components/SocialLinks";
 
 export function Footer() {
   return (
@@ -7,7 +7,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           <div className="max-w-sm">
-            <p className="font-serif text-lg leading-snug">Rosalie Frazier Pazant Foundation</p>
+            <p className="text-lg font-semibold leading-snug">Rosalie Frazier Pazant Foundation</p>
             <p className="mt-3 text-sm leading-relaxed text-hero-muted">
               Committed to disciplined governance, educational opportunity, and community impact.
             </p>
@@ -39,14 +39,26 @@ export function Footer() {
               <a href="mailto:info@pazantfoundation.org" className="link-motion hover:text-hero-ink">
                 info@pazantfoundation.org
               </a>
-              <p className="mt-2">Beaufort, South Carolina</p>
-              <SocialLinks className="mt-4 text-hero-muted [&_li]:text-hero-muted" />
+              <BeaufortLocationLink invert className="mt-2 block text-sm" />
+              <SocialLinks invert className="mt-4" />
             </div>
           </div>
         </div>
-        <p className="mt-12 border-t border-hero-ink/15 pt-8 text-sm text-hero-muted">
-          © {new Date().getFullYear()} Rosalie Frazier Pazant Foundation
-        </p>
+        <div className="mt-12 flex flex-col gap-1 border-t border-hero-ink/15 pt-8 text-sm text-hero-muted">
+          <p>© {new Date().getFullYear()} Rosalie Frazier Pazant Foundation</p>
+          <p>
+            Powered by{" "}
+            <a
+              href="https://www.code4community.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-motion font-medium text-hero-ink/90 hover:text-hero-ink"
+            >
+              Code4Community
+            </a>{" "}
+            {new Date().getFullYear()}
+          </p>
+        </div>
       </div>
     </footer>
   );

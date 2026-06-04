@@ -70,7 +70,7 @@ export function AnimatedStatValue({ value, motion = "count" }: AnimatedStatValue
   return (
     <p
       ref={ref}
-      className={`bio-stat-value font-serif tabular-nums ${started && motion === "reveal" ? "bio-stat-value--revealed" : ""}`}
+      className={`bio-stat-value font-semibold tabular-nums ${started && motion === "reveal" ? "bio-stat-value--revealed" : ""}`}
     >
       {display}
     </p>

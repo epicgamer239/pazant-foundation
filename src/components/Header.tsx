@@ -21,7 +21,7 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
         <Link
           href="/"
-          className="link-motion min-w-0 font-serif text-base leading-snug text-ink hover:text-accent sm:text-lg"
+          className="link-motion min-w-0 text-base font-semibold leading-snug text-ink hover:text-link sm:text-lg"
         >
           Rosalie Frazier Pazant Foundation
         </Link>

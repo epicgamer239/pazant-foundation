@@ -24,7 +24,7 @@ export function SectionHeading({
   return (
     <header id={id} className={`mb-10 scroll-mt-24 md:mb-12 ${alignClass}`}>
       <h2
-        className={`heading-rule font-serif text-balance font-normal leading-[1.12] tracking-[-0.02em] ${titleSize} ${
+        className={`heading-rule section-title text-balance ${titleSize} ${
           invert ? "text-hero-ink heading-rule-invert" : "text-ink"
         }`}
       >
