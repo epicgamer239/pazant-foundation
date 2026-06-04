@@ -69,16 +69,16 @@ export function HeroPortrait({
           <div className={`hero-enter hero-enter-delay-1 ${backLink ? "mt-6" : ""}`}>{eyebrow}</div>
         )}
         <h1
-          className={`font-serif hero-enter text-balance font-normal leading-[1.1] tracking-[-0.03em] text-hero-ink ${
+          className={`hero-enter text-balance text-[clamp(2rem,5vw,3rem)] font-semibold leading-[1.12] tracking-[-0.02em] text-hero-ink ${
             backLink || eyebrow ? "mt-6" : "mt-0"
-          } ${compact ? "text-[clamp(2rem,5vw,3.25rem)]" : "text-[clamp(2.25rem,5.5vw,3.75rem)]"}`}
+          }`}
         >
           {title}
         </h1>
         {subtitle && (
           <p
-            className={`hero-enter text-pretty max-w-2xl leading-relaxed text-hero-muted ${
-              compact ? "mt-4 text-lg" : "mt-5 text-lg md:text-xl"
+            className={`hero-enter text-pretty max-w-2xl text-base leading-relaxed text-hero-muted ${
+              compact ? "mt-4" : "mt-5"
             } ${backLink || eyebrow ? "hero-enter-delay-2" : "hero-enter-delay-1"}`}
           >
             {subtitle}
@@ -86,8 +86,8 @@ export function HeroPortrait({
         )}
         {callout && (
           <div className="hero-callout hero-enter hero-enter-delay-3 mt-8 max-w-md">
-            <p className="font-serif text-xl leading-snug text-hero-ink md:text-2xl">{callout.lead}</p>
-            <p className="mt-3 text-sm leading-relaxed text-hero-muted">{callout.body}</p>
+            <p className="text-lg font-semibold leading-snug text-hero-ink">{callout.lead}</p>
+            <p className="mt-3 text-base leading-relaxed text-hero-muted">{callout.body}</p>
           </div>
         )}
         {children && (

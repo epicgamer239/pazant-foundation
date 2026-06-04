@@ -75,7 +75,7 @@ export function BioJumpNav() {
                 className={`link-motion inline-block whitespace-nowrap border px-3 py-2 text-xs font-semibold transition-[border-color,background-color,color] duration-200 ${
                   isActive
                     ? "bio-jump-link-active border-accent bg-accent text-hero-ink"
-                    : "border-line bg-surface-panel text-ink-muted hover:border-accent/40 hover:text-accent"
+                    : "border-line bg-surface-panel text-ink-muted hover:border-link/40 hover:text-link"
                 }`}
               >
                 {link.label}

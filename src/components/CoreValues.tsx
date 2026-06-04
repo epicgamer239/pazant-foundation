@@ -6,7 +6,6 @@ const coreValues = [
     title: "Stewardship",
     description:
       "Disciplined governance, responsible decision-making, and careful stewardship of entrusted resources.",
-    featured: true,
   },
   {
     title: "Educational Opportunity",
@@ -36,17 +35,16 @@ const coreValues = [
     title: "Legacy of Service",
     description:
       "Carrying forward Mrs. Pazant's dedication to education, service, and community uplift.",
-    featured: true,
   },
 ] as const;
 
 export function CoreValues() {
   return (
-    <div className="values-block mt-12 md:mt-16">
-      <div className="values-intro panel-soft">
-        <FieldLabel>Guiding principles</FieldLabel>
-        <h3 className="prose-section-title mt-3">Core values</h3>
-        <p className="text-pretty mt-4 max-w-prose text-sm leading-relaxed text-ink-muted">
+    <div className="values-surface values-block">
+      <div className="values-intro panel">
+        <FieldLabel>Guiding Principles</FieldLabel>
+        <h3 className="prose-section-title mt-3">Core Values</h3>
+        <p className="text-pretty mt-4 max-w-prose text-base leading-relaxed text-ink-muted">
           Seven commitments that shape how the Foundation governs, partners, and invests in Beaufort
           students.
         </p>
@@ -55,12 +53,11 @@ export function CoreValues() {
       <ol className="values-mosaic" aria-label="Foundation core values">
         {coreValues.map((value, index) => {
           const indexLabel = String(index + 1).padStart(2, "0");
-          const featured = "featured" in value && value.featured;
 
           return (
             <li
               key={value.title}
-              className={`value-tile stagger-enter panel-hover ${featured ? "value-tile-featured" : ""}`}
+              className="value-tile stagger-enter panel-hover"
               style={{ "--i": index } as CSSProperties}
             >
               <span className="value-tile-index" aria-hidden>

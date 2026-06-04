@@ -20,7 +20,7 @@ export function BioTimeline() {
               <li
                 key={block.era}
                 className={`bio-timeline-era-card stagger-enter panel-hover ${
-                  emphasized ? "bio-timeline-era-card--emphasis panel-soft" : "panel panel-accent-top"
+                  emphasized ? "bio-timeline-era-card--emphasis panel" : "panel"
                 }`}
                 style={{ "--i": index } as CSSProperties}
               >
@@ -28,7 +28,7 @@ export function BioTimeline() {
                   {indexLabel}
                 </span>
                 <div className="bio-timeline-era-body min-w-0">
-                  <h3 className="font-serif text-[clamp(1.15rem,2.2vw,1.35rem)] leading-snug text-ink">
+                  <h3 className="font-semibold text-[clamp(1.15rem,2.2vw,1.35rem)] leading-snug text-ink">
                     {block.era}
                   </h3>
                   <ul className="bio-timeline-milestones mt-4">

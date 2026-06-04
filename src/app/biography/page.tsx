@@ -3,7 +3,7 @@ import { BiographyBody } from "@/components/biography/BiographyBody";
 import { HeroPortrait } from "@/components/HeroPortrait";
 
 export const metadata: Metadata = {
-  title: "Rosalie Frazier Pazant: Full Biography",
+  title: "Biography",
   description:
     "Educator. Leader. Trailblazer. Legacy Builder. The distinguished career of Rosalie Frazier Pazant.",
 };

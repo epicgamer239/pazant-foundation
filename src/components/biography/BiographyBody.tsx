@@ -32,7 +32,7 @@ function BulletList({ items, stagger = false }: { items: string[]; stagger?: boo
           className={`flex gap-2 leading-relaxed ${stagger ? "stagger-enter" : ""}`}
           style={stagger ? ({ "--i": index } as CSSProperties) : undefined}
         >
-          <span className="font-semibold text-accent" aria-hidden>
+          <span className="font-semibold text-ink" aria-hidden>
             ·
           </span>
           <span>{item}</span>
@@ -60,7 +60,7 @@ export function BiographyBody() {
       <div className="mx-auto max-w-6xl space-y-10 px-6 py-16 md:space-y-14 md:py-24">
         <Reveal id="bio-intro" className={SECTION_SCROLL}>
           <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10">
-            <figure className="image-enter photo-frame photo-frame-accent panel w-full self-start overflow-hidden p-0">
+            <figure className="image-enter photo-frame panel w-full self-start overflow-hidden p-0">
               <Image
                 src={PORTRAIT_SRC}
                 alt={PORTRAIT_ALT}
@@ -73,7 +73,7 @@ export function BiographyBody() {
                 Rosalie Frazier Pazant, Beaufort educator and community leader.
               </figcaption>
             </figure>
-            <div className="panel-accent-top panel-hover text-pretty">
+            <div className="panel panel-hover text-pretty">
               <FieldLabel>Introduction</FieldLabel>
               <h2 className="prose-section-title mt-3">A life in education</h2>
               <div className="mt-6 space-y-5 text-ink-muted leading-relaxed">
@@ -95,7 +95,7 @@ export function BiographyBody() {
         </Reveal>
 
         <Reveal id="bio-preparation" className={SECTION_SCROLL} delay={40}>
-          <section className="panel-accent-top panel-hover">
+          <section className="panel panel-hover">
             <FieldLabel>Academic preparation</FieldLabel>
             <h2 className="prose-section-title mt-3">Education & credentials</h2>
             <p className="mt-4 text-ink-muted leading-relaxed">
@@ -141,7 +141,7 @@ export function BiographyBody() {
           </figure>
           <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
             <section className="panel panel-hover">
-              <h3 className="font-serif text-lg text-ink">Excellence in K–12 education</h3>
+              <h3 className="font-semibold text-lg text-ink">Excellence in K–12 education</h3>
               <p className="mt-4 text-ink-muted leading-relaxed">
                 Mrs. Pazant served as High School English Department Chair at three major Beaufort County
                 schools:
@@ -160,9 +160,9 @@ export function BiographyBody() {
               </p>
             </section>
 
-            <section className="panel-accent-top panel-hover lg:self-start">
+            <section className="panel panel-hover lg:self-start">
               <FieldLabel>Savannah State University</FieldLabel>
-              <h3 className="font-serif mt-3 text-lg text-ink">Higher education leadership</h3>
+              <h3 className="font-semibold mt-3 text-lg text-ink">Higher education leadership</h3>
               <p className="mt-4 text-ink-muted leading-relaxed">
                 Mrs. Pazant expanded her impact in higher education through key roles at Savannah State
                 University:
@@ -193,11 +193,11 @@ export function BiographyBody() {
                   className="bio-influence-theme panel panel-hover stagger-enter"
                   style={{ "--i": index } as CSSProperties}
                 >
-                  <h3 className="font-serif text-base text-ink">{theme.title}</h3>
+                  <h3 className="font-semibold text-base text-ink">{theme.title}</h3>
                   <ul className="mt-3 space-y-2 text-sm leading-relaxed text-ink-muted">
                     {theme.items.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="font-semibold text-accent" aria-hidden>
+                        <span className="font-semibold text-ink" aria-hidden>
                           ·
                         </span>
                         <span>{item}</span>
@@ -213,7 +213,7 @@ export function BiographyBody() {
             </div>
 
             <div className="flex flex-col gap-6">
-              <section className="panel-accent-top panel-hover">
+              <section className="panel panel-hover">
                 <FieldLabel>National</FieldLabel>
                 <h3 className="prose-section-title mt-3">Broader leadership</h3>
                 <p className="mt-4 text-ink-muted leading-relaxed">
@@ -222,8 +222,8 @@ export function BiographyBody() {
                 <BulletList items={nationalRecognition} />
               </section>
 
-              <blockquote className="bio-pull-quote panel-soft">
-                <p className="font-serif text-lg leading-snug text-ink">
+              <blockquote className="bio-pull-quote panel">
+                <p className="font-semibold text-lg leading-snug text-ink">
                   Selected as one of sixty minority leaders nationwide for the first federally sponsored
                   minority conference at the White House.
                 </p>
@@ -253,7 +253,7 @@ export function BiographyBody() {
         <Reveal id="bio-legacy" className={`${SECTION_SCROLL} band-accent section-y !py-12 md:!py-16`} delay={60}>
           <div className="mx-auto max-w-3xl px-0 text-center">
             <FieldLabel invert>Her enduring legacy</FieldLabel>
-            <blockquote className="quote-deco text-pretty mt-4 font-serif text-[clamp(1.25rem,2.5vw,1.65rem)] leading-relaxed text-hero-ink">
+            <blockquote className="quote-deco quote-deco-light text-pretty mt-4 font-semibold text-[clamp(1.25rem,2.5vw,1.65rem)] leading-relaxed text-hero-ink">
               <p>
                 Rosalie Frazier Pazant&apos;s life was defined by service to students, community, and future
                 generations. Her legacy continues through the Rosalie Frazier Pazant Foundation, which

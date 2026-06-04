@@ -4,7 +4,7 @@ import { honorAwards, honorMilestones } from "@/content/biography";
 
 export function BioHonorsSection() {
   return (
-    <section className="panel-accent-top panel-hover">
+    <section className="panel panel-hover">
       <FieldLabel>Honors & achievements</FieldLabel>
       <h2 className="prose-section-title mt-3 text-balance">Awards & historic milestones</h2>
       <p className="mt-4 max-w-3xl text-pretty text-ink-muted leading-relaxed">
