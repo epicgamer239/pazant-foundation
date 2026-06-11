@@ -13,6 +13,7 @@ export default function BiographyPage() {
     <>
       <HeroPortrait
         compact
+        imageBrightness={1.2}
         backLink={{ href: "/", label: "Back to home" }}
         title="Rosalie Frazier Pazant"
         subtitle="Educator. Leader. Trailblazer. Legacy builder."

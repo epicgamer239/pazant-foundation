@@ -62,6 +62,8 @@ export default function Home() {
         imageSrc={BEAUFORT_HIGH_HERO_SRC}
         imageAlt={BEAUFORT_HIGH_HERO_ALT}
         imageClassName="object-cover object-[50%_42%]"
+        imageBrightness={1.14}
+        overlayWeight="medium"
         eyebrow={<FieldLabel invert>Rosalie Frazier Pazant Foundation</FieldLabel>}
         title="Educational Pathways for Beaufort Students"
         subtitle="Honoring educator Rosalie Frazier Pazant through scholarships and future-ready pathways that help Beaufort students thrive."
