@@ -36,8 +36,8 @@ export function Footer() {
               </li>
             </ul>
             <div className="text-hero-muted">
-              <a href="mailto:info@pazantfoundation.org" className="link-motion hover:text-hero-ink">
-                info@pazantfoundation.org
+              <a href="mailto:alecia@rosaliefrazierpazant.org" className="link-motion hover:text-hero-ink">
+                alecia@rosaliefrazierpazant.org
               </a>
               <BeaufortLocationLink invert className="mt-2 block text-sm" />
               <SocialLinks invert className="mt-4" />

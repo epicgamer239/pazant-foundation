@@ -210,7 +210,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-10">
-            <Button variant="primary" href="mailto:info@pazantfoundation.org?subject=Get%20Involved">
+            <Button variant="primary" href="mailto:alecia@rosaliefrazierpazant.org?subject=Get%20Involved">
               Get Involved
             </Button>
           </div>
@@ -243,10 +243,10 @@ export default function Home() {
             <div>
               <FieldLabel>Email</FieldLabel>
               <a
-                href="mailto:info@pazantfoundation.org"
+                href="mailto:alecia@rosaliefrazierpazant.org"
                 className="link-motion text-link hover:text-link-hover mt-2 block text-lg font-medium"
               >
-                info@pazantfoundation.org
+                alecia@rosaliefrazierpazant.org
               </a>
             </div>
             <div>
@@ -260,7 +260,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8">
-            <Button variant="primary" href="mailto:info@pazantfoundation.org">
+            <Button variant="primary" href="mailto:alecia@rosaliefrazierpazant.org">
               Contact Us
             </Button>
           </div>
