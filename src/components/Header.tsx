@@ -20,15 +20,21 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-surface">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
-        <Link href="/" className="min-w-0 shrink-0">
+        <Link
+          href="/"
+          className="link-motion flex min-w-0 items-center gap-3 text-ink hover:text-link"
+        >
           <Image
             src="/rfp-foundation-logo.webp"
-            alt="Rosalie Frazier Pazant Foundation"
-            width={1056}
-            height={701}
+            alt=""
+            width={835}
+            height={528}
             priority
-            className="h-16 w-auto sm:h-20"
+            className="h-20 w-auto shrink-0 sm:h-24"
           />
+          <span className="max-w-[9.5rem] text-sm font-semibold leading-tight sm:max-w-[14rem] sm:text-base lg:max-w-none lg:text-lg">
+            Rosalie Frazier Pazant Foundation
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">

@@ -135,7 +135,7 @@ export function BiographyBody() {
               />
             </div>
             <figcaption className="border-t border-line bg-surface-raised px-4 py-3 text-sm text-ink-muted">
-              Battery Creek High School, one of three county schools where Mrs. Pazant chaired the English
+              Beaufort High School, one of three county schools where Mrs. Pazant chaired the English
               department.
             </figcaption>
           </figure>

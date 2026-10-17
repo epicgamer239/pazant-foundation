@@ -6,8 +6,8 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { FieldLabel } from "@/components/FieldLabel";
 import { BeaufortLocationLink, SocialLinks } from "@/components/SocialLinks";
 import {
-  BEAUFORT_HIGH_HERO_ALT,
-  BEAUFORT_HIGH_HERO_SRC,
+  BATTERY_CREEK_HERO_ALT,
+  BATTERY_CREEK_HERO_SRC,
   HeroPortrait,
   PORTRAIT_ALT,
   PORTRAIT_SRC,
@@ -59,10 +59,10 @@ export default function Home() {
   return (
     <>
       <HeroPortrait
-        imageSrc={BEAUFORT_HIGH_HERO_SRC}
-        imageAlt={BEAUFORT_HIGH_HERO_ALT}
-        imageClassName="object-cover object-[50%_42%]"
-        imageBrightness={1.14}
+        imageSrc={BATTERY_CREEK_HERO_SRC}
+        imageAlt={BATTERY_CREEK_HERO_ALT}
+        imageClassName="object-cover object-[42%_46%]"
+        imageBrightness={1}
         overlayWeight="medium"
         eyebrow={<FieldLabel invert>Rosalie Frazier Pazant Foundation</FieldLabel>}
         title="Educational Pathways for Beaufort Students"

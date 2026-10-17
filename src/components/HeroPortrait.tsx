@@ -28,8 +28,12 @@ export const CAMPUS_AERIAL_SRC = "/beaufort-campus-aerial.png";
 export const CAMPUS_AERIAL_ALT =
   "Aerial view of a Beaufort County school campus with athletic fields and surrounding woodlands";
 
-export const BEAUFORT_HIGH_HERO_SRC = "/battery-creek-high-entrance.webp";
+export const BEAUFORT_HIGH_HERO_SRC = "/beaufort-high-entrance.png";
 export const BEAUFORT_HIGH_HERO_ALT =
+  "The main entrance of Beaufort High School, where Mrs. Pazant served as an educator";
+
+export const BATTERY_CREEK_HERO_SRC = "/battery-creek-high-entrance.webp";
+export const BATTERY_CREEK_HERO_ALT =
   "The main entrance of Battery Creek High School, where Mrs. Pazant served as an educator";
 
 const DEFAULT_IMAGE_CLASS = "object-cover object-[62%_28%]";
